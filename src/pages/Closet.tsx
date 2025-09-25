@@ -30,7 +30,7 @@ const Closet = () => {
       totalRentals: 12,
       rating: 4.9,
       earnings: 540,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=300",
       dateAdded: "2024-01-15",
       lastRented: "2024-03-10"
     },
@@ -42,7 +42,7 @@ const Closet = () => {
       totalRentals: 8,
       rating: 4.8,
       earnings: 200,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=300",
       dateAdded: "2024-02-01",
       lastRented: "2024-03-20"
     },
@@ -54,7 +54,7 @@ const Closet = () => {
       totalRentals: 15,
       rating: 5.0,
       earnings: 900,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=300",
       dateAdded: "2023-12-10",
       lastRented: "2024-03-18"
     },
@@ -66,7 +66,7 @@ const Closet = () => {
       totalRentals: 5,
       rating: 4.7,
       earnings: 175,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=300",
       dateAdded: "2024-02-20",
       lastRented: "2024-03-05"
     }

@@ -3,8 +3,158 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Search, Sparkles, Users, TrendingUp, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { ItemDetail } from "@/components/ItemDetail";
+import { RentalFlow } from "@/components/RentalFlow";
+import { UserProfile } from "@/components/UserProfile";
+
+// Mock data for demonstration
+const mockItem = {
+  id: "item-1",
+  images: [
+    "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=400"
+  ],
+  title: "Elegant Black Evening Gown",
+  description: "Stunning designer evening gown perfect for formal events, galas, and special occasions. Made from luxurious silk with intricate beadwork details. This dress has been worn to several high-profile events and always receives compliments. Dry clean only.",
+  size: "M",
+  price: 45,
+  condition: "Excellent",
+  category: "Evening Wear",
+  owner: {
+    id: "owner-1",
+    name: "Emma Thompson",
+    avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100",
+    rating: 4.9,
+    reviewCount: 23,
+    responseTime: "2 hours"
+  },
+  location: "Manhattan, NY",
+  availability: "Available",
+  averageRating: 4.8,
+  totalReviews: 15
+};
+
+const mockUser = {
+  id: "user-123",
+  name: "Sarah Johnson",
+  avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
+  bio: "Fashion enthusiast and sustainable style advocate. I love sharing my curated collection of designer pieces and discovering unique finds from fellow style lovers.",
+  location: "San Francisco, CA",
+  joinDate: "March 2023",
+  isVerified: true,
+  totalRentals: 47,
+  totalListings: 23,
+  averageRating: 4.9,
+  totalReviews: 32
+};
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState<'home' | 'item-detail' | 'rental-flow' | 'profile'>('home');
+  const [showRentalFlow, setShowRentalFlow] = useState(false);
+
+  const handleRentItem = () => {
+    setShowRentalFlow(true);
+  };
+
+  const handleRentalSubmit = (request: any) => {
+    console.log('Rental request:', request);
+    setShowRentalFlow(false);
+    alert('Rental request sent successfully!');
+  };
+
+  const handleViewItemDetail = () => {
+    setCurrentView('item-detail');
+  };
+
+  const handleViewProfile = () => {
+    setCurrentView('profile');
+  };
+
+  const handleBackToHome = () => {
+    setCurrentView('home');
+    setShowRentalFlow(false);
+  };
+
+  if (currentView === 'item-detail') {
+    return (
+      <div className="min-h-screen bg-background">
+        <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <span className="text-xl font-bold text-foreground">StyleShare</span>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Button variant="outline" onClick={handleBackToHome}>Back to Home</Button>
+                <Button onClick={handleViewProfile}>View Profile</Button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div className="container mx-auto px-4 py-8">
+          <ItemDetail
+            item={mockItem}
+            onBack={handleBackToHome}
+            onRent={handleRentItem}
+            onMessage={() => alert('Messaging feature coming soon!')}
+            onViewProfile={handleViewProfile}
+          />
+        </div>
+        {showRentalFlow && (
+          <RentalFlow
+            item={{
+              id: mockItem.id,
+              title: mockItem.title,
+              price: mockItem.price,
+              image: mockItem.images[0],
+              owner: mockItem.owner.name
+            }}
+            onClose={() => setShowRentalFlow(false)}
+            onSubmit={handleRentalSubmit}
+          />
+        )}
+      </div>
+    );
+  }
+
+  if (currentView === 'profile') {
+    return (
+      <div className="min-h-screen bg-background">
+        <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <span className="text-xl font-bold text-foreground">StyleShare</span>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Button variant="outline" onClick={handleBackToHome}>Back to Home</Button>
+                <Button onClick={() => setCurrentView('item-detail')}>View Item</Button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div className="container mx-auto px-4 py-8">
+          <UserProfile
+            user={mockUser}
+            isOwnProfile={false}
+            onSendMessage={() => alert('Messaging feature coming soon!')}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -26,6 +176,18 @@ const Index = () => {
               <Link to="/closet" className="text-muted-foreground hover:text-foreground transition-colors">
                 My Closet
               </Link>
+              <button 
+                onClick={handleViewItemDetail}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Demo Item
+              </button>
+              <button 
+                onClick={handleViewProfile}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Demo Profile
+              </button>
               <Button variant="outline" size="sm">Sign In</Button>
               <Button size="sm">Get Started</Button>
             </div>
@@ -56,11 +218,14 @@ const Index = () => {
                   Start Browsing
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4" asChild>
-                <Link to="/closet">
-                  <Heart className="w-5 h-5 mr-2" />
-                  Share Your Closet
-                </Link>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 py-4"
+                onClick={handleViewItemDetail}
+              >
+                <Heart className="w-5 h-5 mr-2" />
+                Try Demo Item
               </Button>
             </div>
           </div>

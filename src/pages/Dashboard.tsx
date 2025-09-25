@@ -15,13 +15,13 @@ const mockRentals = [
     item: {
       id: "item-1",
       title: "Designer Evening Gown",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=300",
       price: 45
     },
     counterparty: {
       id: "user-2",
       name: "Sarah Kim",
-      avatar: "/placeholder.svg"
+      avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100"
     },
     status: "pending" as const,
     startDate: addDays(new Date(), 2),
@@ -36,13 +36,13 @@ const mockRentals = [
     item: {
       id: "item-2",
       title: "Vintage Leather Jacket",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=300",
       price: 35
     },
     counterparty: {
       id: "user-3",
       name: "Mike Johnson",
-      avatar: "/placeholder.svg"
+      avatar: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=100"
     },
     status: "active" as const,
     startDate: new Date(),
@@ -56,13 +56,13 @@ const mockRentals = [
     item: {
       id: "item-3",
       title: "Silk Cocktail Dress",
-      image: "/placeholder.svg",
+      image: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=300",
       price: 40
     },
     counterparty: {
       id: "user-4",
       name: "Lisa Chen",
-      avatar: "/placeholder.svg"
+      avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100"
     },
     status: "completed" as const,
     startDate: addDays(new Date(), -10),

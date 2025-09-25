@@ -43,7 +43,7 @@ const itemReviews = [
   {
     id: "1",
     reviewerName: "Sarah Kim",
-    reviewerAvatar: "/placeholder.svg",
+    reviewerAvatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100",
     rating: 5,
     comment: "This dress was absolutely perfect for my date night! The fit was exactly as described and the quality is amazing. Emma was so helpful and responsive. Highly recommend!",
     date: "2 weeks ago",
@@ -55,7 +55,7 @@ const itemReviews = [
   {
     id: "2",
     reviewerName: "Lisa Chen",
-    reviewerAvatar: "/placeholder.svg",
+    reviewerAvatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
     rating: 5,
     comment: "Stunning dress! Got so many compliments at the wedding. The fabric is luxurious and the photos don't do it justice. Will definitely rent from Emma again.",
     date: "1 month ago",

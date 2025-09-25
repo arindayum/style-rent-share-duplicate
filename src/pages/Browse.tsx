@@ -30,7 +30,7 @@ const Browse = () => {
       location: "Manhattan, NY",
       rating: 4.9,
       reviews: 23,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=300",
       tags: ["Evening", "Designer", "Size M"],
       available: true
     },
@@ -42,7 +42,7 @@ const Browse = () => {
       location: "Brooklyn, NY",
       rating: 4.8,
       reviews: 15,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=300",
       tags: ["Casual", "Vintage", "Size S"],
       available: true
     },
@@ -54,7 +54,7 @@ const Browse = () => {
       location: "Queens, NY",
       rating: 5.0,
       reviews: 31,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=300",
       tags: ["Wedding", "Designer", "Size L"],
       available: false
     },
@@ -66,7 +66,7 @@ const Browse = () => {
       location: "Manhattan, NY",
       rating: 4.7,
       reviews: 18,
-      image: "/api/placeholder/300/400",
+      image: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=300",
       tags: ["Boho", "Festival", "Size M"],
       available: true
     }

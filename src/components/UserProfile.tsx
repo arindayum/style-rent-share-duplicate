@@ -33,7 +33,7 @@ const mockReviews = [
   {
     id: "1",
     reviewerName: "Sarah Kim",
-    reviewerAvatar: "/placeholder.svg",
+    reviewerAvatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100",
     rating: 5,
     comment: "Amazing experience! The dress was in perfect condition and fit beautifully. Emma was so responsive and helpful throughout the process. Would definitely rent from her again!",
     date: "2 weeks ago",
@@ -45,7 +45,7 @@ const mockReviews = [
   {
     id: "2",
     reviewerName: "Mike Johnson",
-    reviewerAvatar: "/placeholder.svg",
+    reviewerAvatar: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=100",
     rating: 4,
     comment: "Sarah took great care of my vintage jacket. Returned it in the same condition as when she borrowed it. Great communication and very respectful of my items.",
     date: "1 month ago",
@@ -57,7 +57,7 @@ const mockReviews = [
   {
     id: "3",
     reviewerName: "Lisa Chen",
-    reviewerAvatar: "/placeholder.svg",
+    reviewerAvatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100",
     rating: 5,
     comment: "The wedding dress was absolutely stunning and saved my day! Quick pickup and the dress was exactly as described. Highly recommend!",
     date: "1 month ago",

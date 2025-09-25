@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 const mockUser = {
   id: "user-123",
   name: "Emma Thompson",
-  avatar: "/placeholder.svg",
+  avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200",
   bio: "Fashion enthusiast and sustainable style advocate. I love sharing my curated collection of designer pieces and discovering unique finds from fellow style lovers. Let's make fashion more accessible and sustainable together! ✨",
   location: "San Francisco, CA",
   joinDate: "March 2023",
