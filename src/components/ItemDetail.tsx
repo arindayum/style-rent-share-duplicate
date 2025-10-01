@@ -148,7 +148,7 @@ export function ItemDetail({ item, onBack, onRent, onMessage, onViewProfile }: I
             </div>
 
             <div className="text-4xl font-bold text-primary mb-4">
-              ${item.price}
+              {item.price}
               <span className="text-lg text-muted-foreground font-normal"> / day</span>
             </div>
 

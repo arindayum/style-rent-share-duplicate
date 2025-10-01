@@ -12,13 +12,13 @@ import { UserProfile } from "@/components/UserProfile";
 const mockItem = {
   id: "item-1",
   images: [
-    "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=400"
+    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQF58t0nuWMZGihWSI8DfS42Sb6TSKGokaBfzn1gqlTgRv-dXLopA666ja6bbpo_y8LMYM10CIEJwuOTlV5UHiUBsc3aLgeSOFV1JjRetNH",
+    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT4eVbjXr4s1IafFT7KpYssLQtqeFY7fG-gcYam5ML697njziAEzhwDYNAF39tW1xc0CWJmOB7XTg_MA0FOHLKWm26a1NFAE2CkgW9z200a2LHG4PAcvfjvzw"
   ],
   title: "Elegant Black Evening Gown",
   description: "Stunning designer evening gown perfect for formal events, galas, and special occasions. Made from luxurious silk with intricate beadwork details. This dress has been worn to several high-profile events and always receives compliments. Dry clean only.",
   size: "M",
-  price: 45,
+  price: 299,
   condition: "Excellent",
   category: "Evening Wear",
   owner: {

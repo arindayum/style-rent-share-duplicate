@@ -134,7 +134,7 @@ export function RentalFlow({ item, onClose, onSubmit }: RentalFlowProps) {
             <div className="flex-1">
               <h3 className="font-semibold text-foreground">{item.title}</h3>
               <p className="text-muted-foreground">by {item.owner}</p>
-              <p className="text-lg font-bold text-primary">${item.price}/day</p>
+              <p className="text-lg font-bold text-primary">₹{item.price}/day</p>
             </div>
           </div>
 
@@ -198,11 +198,11 @@ export function RentalFlow({ item, onClose, onSubmit }: RentalFlowProps) {
               </div>
               <div className="flex justify-between">
                 <span>Daily Rate:</span>
-                <span>${item.price}</span>
+                <span>₹{item.price}</span>
               </div>
               <div className="flex justify-between text-lg font-bold border-t pt-2">
                 <span>Total:</span>
-                <span className="text-primary">${totalPrice}</span>
+                <span className="text-primary">₹{totalPrice}</span>
               </div>
             </div>
           )}

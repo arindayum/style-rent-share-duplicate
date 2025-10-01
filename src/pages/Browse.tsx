@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -26,11 +27,11 @@ const Browse = () => {
       id: 1,
       title: "Elegant Black Evening Gown",
       owner: "Sarah M.",
-      price: 45,
+      price: 350,
       location: "Manhattan, NY",
       rating: 4.9,
       reviews: 23,
-      image: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQF58t0nuWMZGihWSI8DfS42Sb6TSKGokaBfzn1gqlTgRv-dXLopA666ja6bbpo_y8LMYM10CIEJwuOTlV5UHiUBsc3aLgeSOFV1JjRetNH",
       tags: ["Evening", "Designer", "Size M"],
       available: true
     },
@@ -38,11 +39,11 @@ const Browse = () => {
       id: 2,
       title: "Vintage Floral Summer Dress",
       owner: "Emma L.",
-      price: 25,
+      price: 150,
       location: "Brooklyn, NY",
       rating: 4.8,
       reviews: 15,
-      image: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS9cnTtNZVtbsYnqssiIBKf1VxblfdKxNU43FiCtDkhlhWtPBy2_1gzrW27xY6QQzOX6yoqzAEpY0DxuLqqBnlJLOMGsbVcbbF9mF1uAw",
       tags: ["Casual", "Vintage", "Size S"],
       available: true
     },
@@ -50,11 +51,11 @@ const Browse = () => {
       id: 3,
       title: "Designer Wedding Guest Dress",
       owner: "Jessica K.",
-      price: 60,
+      price: 499,
       location: "Queens, NY",
       rating: 5.0,
       reviews: 31,
-      image: "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRhC9YhmpN5kj4H1W4fNyVOD2v_txLRqfsmj4u9tS6554cF4qXu0vjlOC8zURBMCeZfsqxUGauHJ28KD8l7g8i_8KQ4nH_z0m6YnD8WRAUCNDIgdd_V5GtxIjNl4wrP9St9njDH_A&usqp=CAc",
       tags: ["Wedding", "Designer", "Size L"],
       available: false
     },
@@ -62,11 +63,11 @@ const Browse = () => {
       id: 4,
       title: "Boho Maxi Dress",
       owner: "Maya R.",
-      price: 35,
+      price: 299,
       location: "Manhattan, NY",
       rating: 4.7,
       reviews: 18,
-      image: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: "https://4.imimg.com/data4/HG/GM/MY-271218/indian-bohemian-dresses.png",
       tags: ["Boho", "Festival", "Size M"],
       available: true
     }
@@ -137,7 +138,7 @@ const Browse = () => {
             <Badge variant="secondary">Casual</Badge>
             <Badge variant="secondary">Wedding</Badge>
             <Badge variant="secondary">Size S</Badge>
-            <Badge variant="secondary">Under $30</Badge>
+            <Badge variant="secondary">Under ₹30</Badge>
             <Badge variant="secondary">Available Now</Badge>
           </div>
         </div>
@@ -148,10 +149,13 @@ const Browse = () => {
             {mockItems.map((item) => (
               <Card key={item.id} className="group cursor-pointer bg-gradient-card border-0 shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden">
                 <div className="relative">
+                  {/* FIXED: show actual image */}
                   <div className="aspect-[3/4] bg-muted overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-accent/20 to-secondary/30 flex items-center justify-center">
-                      <span className="text-muted-foreground text-sm">Fashion Image</span>
-                    </div>
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                   <Button
                     size="sm"
@@ -180,7 +184,7 @@ const Browse = () => {
                       <span className="text-foreground font-medium">{item.rating}</span>
                       <span className="text-muted-foreground ml-1">({item.reviews})</span>
                     </div>
-                    <span className="font-bold text-foreground">${item.price}/day</span>
+                    <span className="font-bold text-foreground">₹{item.price}/day</span>
                   </div>
                   <div className="flex flex-wrap gap-1 mb-3">
                     {item.tags.map((tag, index) => (
@@ -204,10 +208,13 @@ const Browse = () => {
           <div className="max-w-md mx-auto">
             <div className="relative">
               <Card className="bg-gradient-card border-0 shadow-strong overflow-hidden">
+                {/* FIXED: show actual image */}
                 <div className="aspect-[3/4] bg-muted overflow-hidden relative">
-                  <div className="w-full h-full bg-gradient-to-br from-accent/20 to-secondary/30 flex items-center justify-center">
-                    <span className="text-muted-foreground">Fashion Image</span>
-                  </div>
+                  <img 
+                    src={mockItems[currentSwipeIndex].image} 
+                    alt={mockItems[currentSwipeIndex].title} 
+                    className="w-full h-full object-cover" 
+                  />
                   <div className="absolute top-4 right-4 flex space-x-2">
                     <Button size="sm" variant="secondary" className="w-10 h-10 p-0">
                       <Heart className="w-4 h-4" />
@@ -228,7 +235,7 @@ const Browse = () => {
                       <span className="text-foreground font-medium">{mockItems[currentSwipeIndex].rating}</span>
                       <span className="text-muted-foreground ml-1">({mockItems[currentSwipeIndex].reviews} reviews)</span>
                     </div>
-                    <span className="text-2xl font-bold text-foreground">${mockItems[currentSwipeIndex].price}/day</span>
+                    <span className="text-2xl font-bold text-foreground">₹{mockItems[currentSwipeIndex].price}/day</span>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {mockItems[currentSwipeIndex].tags.map((tag, index) => (

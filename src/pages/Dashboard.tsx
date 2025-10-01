@@ -16,7 +16,7 @@ const mockRentals = [
       id: "item-1",
       title: "Designer Evening Gown",
       image: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=300",
-      price: 45
+      price: 45,
     },
     counterparty: {
       id: "user-2",
